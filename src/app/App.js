@@ -1,8 +1,21 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
 import React,{useState} from 'react';
 import { ThemeContext } from "./libs/context";
+import ThemeToggler from './components/themeToggler';
+import { Account, HomePage, Movies, Search, Shows } from "./pages";
+
 import styles from './App.module.scss';
 import './App.css';
-import ThemeToggler from './components/themeToggler';
+
+
+
+
 
 const App = () => {
   
@@ -10,8 +23,25 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
       <div className={styles.app} data-theme = {theme}>
-      <ThemeToggler />
-        <h1>Hello World!</h1>
+        <Router>
+          <Switch>
+          <Route path = '/account'>
+              <Account />
+            </Route>
+            <Route path = '/search'>
+              <Search />
+            </Route>
+            <Route path = '/shows'>
+              <Shows />
+            </Route>
+            <Route path = '/movies'>
+              <Movies />
+            </Route>
+            <Route path = '/'>
+              <HomePage />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     </ThemeContext.Provider>
   );
