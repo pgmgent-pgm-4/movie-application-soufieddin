@@ -6,12 +6,10 @@ import {
 } from "react-router-dom";
 
 import React,{useState} from 'react';
+import classNames from 'classnames';
 import { ThemeContext } from "./libs/context";
-import ThemeToggler from './components/themeToggler';
 import { Account, HomePage, Movies, Search, Shows } from "./pages";
-
 import styles from './App.module.scss';
-import './App.css';
 
 
 
@@ -22,7 +20,7 @@ const App = () => {
   const [theme, setTheme] = useState('dark');
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
-      <div className={styles.app} data-theme = {theme}>
+      <div className={classNames(styles.app, `${theme === 'dark' ? styles.app__dark : styles.app__light}`)}>
         <Router>
           <Switch>
           <Route path = '/account'>
