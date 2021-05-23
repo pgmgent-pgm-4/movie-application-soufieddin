@@ -63,9 +63,6 @@
           height:2rem;
           background-color:transparent;
           padding: 0 .5rem;
-          &::placeholder{
-            color:#c0c0c0;
-          }
         }
         button{
           height:2rem;
@@ -76,6 +73,10 @@
         &__dark{
           input{
             border:1px solid #fff;
+            color:#fff;
+            &::placeholder{
+              color:#c0c0c0;
+            }
           }
           button{
             background-color:#fff;
@@ -85,6 +86,10 @@
         &__light{
           input{
             border:1px solid #441D4F;
+            color:#441D4F;
+            &::placeholder{
+              color:gray;
+            }
           }
           button{
             background-color:#441D4F;

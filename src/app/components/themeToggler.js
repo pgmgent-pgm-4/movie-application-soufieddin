@@ -9,7 +9,6 @@ const ThemeToggler = () => {
 
     const handleThemeToggle = (e) => {
       e.preventDefault();
-
       setTheme(theme === 'light'? 'dark' : 'light');
     }
 
