@@ -7,6 +7,7 @@ import {
 
 import React,{useState} from 'react';
 import classNames from 'classnames';
+import * as Routes from './routes';
 import { ThemeContext } from "./libs/context";
 import { Account, HomePage, Movies, Search, Shows } from "./pages";
 import styles from './App.module.scss';
@@ -23,19 +24,20 @@ const App = () => {
       <div className={classNames(styles.app, `${theme === 'dark' ? styles.app__dark : styles.app__light}`)}>
         <Router>
           <Switch>
-          <Route path = '/account'>
+          <Route exact path = {Routes.Account}>
               <Account />
             </Route>
-            <Route path = '/search'>
+            <Route exact path = {Routes.SEARCH}>
               <Search />
             </Route>
-            <Route path = '/shows'>
+            <Route exact path = {Routes.SHOWS}>
               <Shows />
             </Route>
-            <Route path = '/movies'>
+            <Route exact path = {Routes.MOVIES}>
               <Movies />
             </Route>
-            <Route path = '/'>
+            <Redirect from={Routes.HOME} to={Routes.LANDING}/>
+            <Route exact path = {Routes.LANDING}>
               <HomePage />
             </Route>
           </Switch>

@@ -1,5 +1,11 @@
 .nav{
   width: 100%;
+  transition: all .2s ease-in-out;
+  li{
+    a:hover{
+      text-decoration: underline;
+    }
+  }
   &__dark{
     li{
       a{
@@ -42,6 +48,9 @@
           padding: .5rem;
           font-size: 1.6rem;
         }
+        a:hover{
+          text-decoration: none;
+        }
       }
     }
     &__films{
@@ -69,6 +78,7 @@
           padding:.5rem;
           border:none;
           outline: none;
+          cursor: pointer;
         }
         &__dark{
           input{
@@ -98,7 +108,7 @@
         }
       }
     }
-    @media (max-width: 768px){
+    @media (max-width: 991px){
       &__logo{
         width:100%;
         margin-bottom: 3rem;

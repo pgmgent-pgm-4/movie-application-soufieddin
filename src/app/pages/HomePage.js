@@ -1,9 +1,11 @@
+import { Results, SubNav } from '../components';
 import { BaseLayout } from '../layouts';
 
 const HomePage = () => {
   return (
     <BaseLayout>
-      <p>Home Page</p>
+      <SubNav />
+      <Results />
     </BaseLayout>
   )
 }

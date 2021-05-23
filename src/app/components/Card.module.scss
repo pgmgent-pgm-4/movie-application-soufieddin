@@ -1,0 +1,35 @@
+.card{
+  width:32%;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+
+  &:hover{
+    transform: scale(1.05);
+  }
+  p{
+    margin-bottom: .5rem;
+  }
+  img{
+    object-fit: contain;
+    max-width: 100%;
+    margin-bottom: .5rem;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+  }
+  @media(max-width: 991px){
+    width:100%;
+    img{
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+  @media (max-width: 991px) and (min-width: 600px){
+    width:49%;
+  }
+}

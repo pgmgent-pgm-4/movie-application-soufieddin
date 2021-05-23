@@ -1,0 +1,10 @@
+.results{
+  width:100%;
+  margin-top: 2rem;
+  div{
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+}
