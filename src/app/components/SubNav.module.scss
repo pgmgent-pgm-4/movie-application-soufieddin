@@ -1,8 +1,7 @@
 .subnav{
   display: flex;
   align-items: center;
-  width:100%;
-  padding:1rem 8rem;
+  justify-content: center;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -11,14 +10,13 @@
   }
   li{
     cursor:pointer;
-    margin-right: 11.5rem;
+    margin-right: 3rem;
     white-space: nowrap;
   }
   li:hover{
     text-decoration:underline;
   }
   &__dark{
-    border-bottom: .5px solid #fff;
     li{
       color: #fff;
       
@@ -30,10 +28,11 @@
     }
   }
   @media(max-width:991px){
-    padding:1rem;
+    justify-content: start;
+    align-items: start;
     li{
-      margin-right: 3rem;
-      padding: 0 1.75rem;
+      padding: 0;
+      margin: 0 1.5rem;
     }
   }
 }

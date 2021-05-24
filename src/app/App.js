@@ -9,8 +9,9 @@ import React,{useState} from 'react';
 import classNames from 'classnames';
 import * as Routes from './routes';
 import { ThemeContext } from "./libs/context";
-import { Account, HomePage, Movies, Search, Shows } from "./pages";
+import { Account, Details, HomePage, Movies, Search, Shows } from "./pages";
 import styles from './App.module.scss';
+import { DetailElement } from "./components";
 
 
 
@@ -35,6 +36,9 @@ const App = () => {
             </Route>
             <Route exact path = {Routes.MOVIES}>
               <Movies />
+            </Route>
+            <Route exact path = {Routes.Details}>
+              <Details component={DetailElement}/>
             </Route>
             <Redirect from={Routes.HOME} to={Routes.LANDING}/>
             <Route exact path = {Routes.LANDING}>

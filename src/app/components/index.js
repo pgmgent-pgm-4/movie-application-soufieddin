@@ -1,11 +1,17 @@
+import DetailElement from './DetailElement';
 import ThemeToggler from './themeToggler';
-import SubNav from './SubNav';
+import SubNavHome from './SubNavHome';
+import SubNavMovies from './SubNavMovies';
+import SubNavShows from './SubNavShows';
 import Results from './Results';
 import Card from './Card';
 
 export {
+  DetailElement,
   ThemeToggler,
-  SubNav,
+  SubNavHome,
+  SubNavMovies,
+  SubNavShows,
   Results,
   Card,
 }

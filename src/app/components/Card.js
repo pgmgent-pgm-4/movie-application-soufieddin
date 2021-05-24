@@ -1,19 +1,34 @@
-import React from 'react'
+import React, { forwardRef } from 'react';
+import LinesEllipsis from 'react-lines-ellipsis';
+import {useContext} from "react";
+import classNames from "classnames";
+import { ThemeContext } from "../libs/context";
 import styles from './Card.module.scss';
 
+const base_img_url = 'https://image.tmdb.org/t/p/original/';
 
+const Card = forwardRef(({element, type}, ref) => {
+  const {theme} = useContext(ThemeContext);
 
-const Card = ({movie}) => {
   return (
-      <div className={styles.card}> 
-        <img src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80' alt='movie' />
+      <a href={`/details/${element.media_type || type}/${element.id}`} ref = {ref} className={classNames(styles.card, `${theme === 'dark' ? styles.card__dark : styles.card__light}`)} id = {element.id} > 
+        <img src={`${base_img_url}${element.backdrop_path || element.poster_path}`} alt='movie poster' />
         <div className={styles.card__info}>
-          <p>This movie is about ...</p>
-          <h2>Movie title</h2>
-          <p>Avarage score ...</p>
+          <LinesEllipsis
+            text={element.overview}
+            maxLine='1'
+            ellipsis='...'
+            trimRight
+            basedOn='letters'
+          />
+          <h2>{element.title || element.original_name}</h2>
+          <div className={styles.card__info__extra}>
+            <p>{element.vote_average}/10 | ({element.vote_count} Votes) </p>
+            <p>{element.release_date || element.first_air_date}</p>
+          </div>
         </div>
-      </div>
+      </a>
   )
-}
+});
 
 export default Card

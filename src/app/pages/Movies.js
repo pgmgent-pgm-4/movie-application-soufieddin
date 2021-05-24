@@ -1,10 +1,15 @@
+import { useState } from 'react';
+import { Results, SubNavMovies } from '../components';
 import { BaseLayout } from '../layouts';
-
+import requests from '../api/requests';
 
 const Movies = () => {
+  const [selected, setSelected] = useState(requests.fetch_popular_movies);
+  const [type, setType] = useState('');
   return (
     <BaseLayout>
-      <p>Movies Page</p>
+      <SubNavMovies setSelected={setSelected}  setType={setType}/>
+      <Results selected={selected} type={type}/>
     </BaseLayout>
   )
 }

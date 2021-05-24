@@ -22,16 +22,16 @@ const MainNav = () => {
           <Link to={Routes.MOVIES}>Movies</Link>
         </li>
         <li>
-          <Link to={Routes.SHOWS}>Tv Shows</Link>
+          <Link  to={Routes.SHOWS}>Tv Shows</Link>
         </li>
         <li>
-          <Link to={Routes.Account}>Account</Link>
+          <Link  to={Routes.Account}>Account</Link>
         </li>
       </div>
       <div className={styles.nav__list__other}>
         <li className={classNames(styles.nav__list__other__search, `${theme === 'dark' ? styles.nav__list__other__search__dark : styles.nav__list__other__search__light}`)}>
           <input type = 'text' placeholder='Search... '/>
-          <Link to={Routes.SEARCH}><button>Search</button></Link>
+          <Link  to={Routes.SEARCH}><button>Search</button></Link>
         </li>
         <ThemeToggler />
       </div>
