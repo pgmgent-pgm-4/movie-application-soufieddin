@@ -5,7 +5,7 @@ import requests from '../api/requests';
 
 const Shows = () => {
   const [selected, setSelected] = useState(requests.fetch_popular_shows);
-  const [type, setType] = useState('');
+  const [type, setType] = useState('tv');
   return (
     <BaseLayout>
       <SubNavShows setSelected={setSelected} setType={setType}/>
