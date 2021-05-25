@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import FlipMove from 'react-flip-move';
-import Card from './Card';
+import Card from '../card/Card';
 import styles from './Results.module.scss';
 // import requests from '../api/requests';
 

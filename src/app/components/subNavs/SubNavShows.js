@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import classNames from "classnames";
-import { ThemeContext } from "../libs/context";
-import requests from '../api/requests';
+import { ThemeContext } from "../../libs/context";
+import requests from '../../api/requests';
 
 import styles from './SubNav.module.scss';
 

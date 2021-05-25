@@ -1,4 +1,4 @@
-import DetailElement from '../components/DetailElement';
+import DetailElement from '../components/detailElement/DetailElement';
 import { BaseLayout } from '../layouts';
 
 

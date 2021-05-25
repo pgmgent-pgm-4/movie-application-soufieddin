@@ -1,4 +1,4 @@
-const api_key = '8aa3a6efa82617beae9311a4b0ef1f76';
+const api_key = process.env.REACT_APP_API_KEY;
 
 const points =  {
   fetch_trending: `https://api.themoviedb.org/3/trending/all/week?api_key=${api_key}&language=en-US`,

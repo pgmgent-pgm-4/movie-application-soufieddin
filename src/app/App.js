@@ -11,7 +11,7 @@ import * as Routes from './routes';
 import { ThemeContext } from "./libs/context";
 import { Account, Details, HomePage, Movies, Search, Shows } from "./pages";
 import styles from './App.module.scss';
-import { DetailElement } from "./components";
+import { DetailElement, SearchResults } from "./components";
 
 
 
@@ -29,7 +29,7 @@ const App = () => {
               <Account />
             </Route>
             <Route exact path = {Routes.SEARCH}>
-              <Search />
+              <Search component={SearchResults}/>
             </Route>
             <Route exact path = {Routes.SHOWS}>
               <Shows />

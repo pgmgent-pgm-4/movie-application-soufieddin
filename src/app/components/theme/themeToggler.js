@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from "../libs/context";
+import { ThemeContext } from "../../libs/context";
 import styles from './themeToggler.module.scss';
 
 

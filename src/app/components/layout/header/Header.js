@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import classNames from "classnames";
-import { ThemeContext } from "../../libs/context";
-import MainNav from "./MainNav";
+import { ThemeContext } from "../../../libs/context";
+import MainNav from "../mainNav/MainNav";
 import styles from "./Header.module.scss";
 
 const Header = () => {
