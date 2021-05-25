@@ -1,4 +1,5 @@
 import DetailElement from './detailElement/DetailElement';
+import HomeResults from './results/HomeResults';
 import ThemeToggler from './theme/themeToggler';
 import SearchResults from './results/SearchResults';
 import SubNavHome from './subNavs/SubNavHome';
@@ -9,6 +10,7 @@ import Card from './card/Card';
 
 export {
   DetailElement,
+  HomeResults,
   ThemeToggler,
   SearchResults,
   SubNavHome,
