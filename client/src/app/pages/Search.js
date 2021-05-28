@@ -1,13 +1,15 @@
-import { SearchResults } from '../components';
+
+import { SearchResults} from '../components';
 import { BaseLayout } from '../layouts';
 
 
 const Search = () => {
+
   return (
     <BaseLayout>
-      <SearchResults />
+      <SearchResults/>
     </BaseLayout>
   )
 }
 
-export default Search
+export default Search;

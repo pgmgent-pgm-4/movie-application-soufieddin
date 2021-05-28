@@ -28,20 +28,20 @@ const App = () => {
           <Route exact path = {Routes.Account}>
               <Account />
             </Route>
-            <Route exact path = {Routes.SEARCH}>
+            <Route  path = {Routes.SEARCH}>
               <Search component={SearchResults}/>
             </Route>
-            <Route exact path = {Routes.SHOWS}>
+            <Route  path = {Routes.SHOWS}>
               <Shows />
             </Route>
-            <Route exact path = {Routes.MOVIES}>
+            <Route  path = {Routes.MOVIES}>
               <Movies />
             </Route>
-            <Route exact path = {Routes.Details}>
+            <Route  path = {Routes.Details}>
               <Details component={DetailElement}/>
             </Route>
             <Redirect from={Routes.HOME} to={Routes.LANDING}/>
-            <Route exact path = {Routes.LANDING}>
+            <Route  path = {Routes.LANDING}>
               <HomePage />
             </Route>
           </Switch>

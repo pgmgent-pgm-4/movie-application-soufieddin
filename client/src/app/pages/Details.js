@@ -10,4 +10,4 @@ const Details = () => {
   )
 }
 
-export default Details
+export default Details;
