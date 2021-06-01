@@ -1,7 +1,6 @@
 .subnav{
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -28,11 +27,14 @@
     }
   }
   @media(max-width:991px){
-    justify-content: start;
     align-items: start;
     li{
       padding: 0;
       margin: 0 1.5rem;
     }
   }
+}
+.active{
+  text-decoration: underline;
+  font-weight: 700;
 }

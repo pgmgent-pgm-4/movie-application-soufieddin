@@ -15,12 +15,12 @@ const Results = ({selected, type}) => {
   useEffect(() => {
     async function fechData () {
       const request = await axios.get(selected);
-      console.log(request.data.results);
+      
       setElements(request.data.results);
       return request;
     }
     fechData();
-  },[selected])
+  },[selected, type])
 
   return (
     <div className={styles.results}>

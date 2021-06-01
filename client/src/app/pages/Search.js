@@ -7,7 +7,6 @@ import { BaseLayout } from '../layouts';
 
 const Search = () => {
   const params = useQuery();
-  let word = params.get('keyword');
   let text = params.get('query');
   const [type, setType] = useState('movie');
   return (

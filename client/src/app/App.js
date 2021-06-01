@@ -9,7 +9,7 @@ import React,{useState} from 'react';
 import classNames from 'classnames';
 import * as Routes from './routes';
 import { ThemeContext } from "./libs/context";
-import { Account, Details, HomePage, Movies, Search, Shows } from "./pages";
+import { Account, Details, HomePage, Media, Search } from "./pages";
 import styles from './App.module.scss';
 import { DetailElement, SearchResults } from "./components";
 
@@ -31,11 +31,8 @@ const App = () => {
             <Route  path = {Routes.SEARCH}>
               <Search component={SearchResults}/>
             </Route>
-            <Route  path = {Routes.SHOWS}>
-              <Shows />
-            </Route>
-            <Route  path = {Routes.MOVIES}>
-              <Movies />
+            <Route  path = {Routes.MEDIA}>
+              <Media />
             </Route>
             <Route  path = {Routes.Details}>
               <Details component={DetailElement}/>

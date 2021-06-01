@@ -10,6 +10,9 @@ body {
   margin: 0 auto;
   padding: 1rem;
 }
+main{
+  min-height: 83.3vh;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -27,4 +30,5 @@ ul{
 }
 .active{
   color: red !important;
+  font-weight: 700;
 }

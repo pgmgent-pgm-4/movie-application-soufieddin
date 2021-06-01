@@ -1,25 +1,25 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import classNames from "classnames";
 import { ThemeContext } from "../../libs/context";
 
 
 import styles from './SubNav.module.scss';
-import useQuery from "../../hooks/query";
+
 
 const SubNavSearch = ({setType}) => {
   const {theme} = useContext(ThemeContext);
-  const params = useQuery();
-  let word = params.get('keyword');
-  let text = params.get('query');
-  console.log([word, text])
-
+  const [active, setActive] = useState('Movies');
 
   
+  const handleNav = (type,e) =>{
+    setType(type);
+    setActive(e);
+  }
   return (
      <div className = 'container'>
     <ul className={classNames(styles.subnav, `${theme === 'dark' ? styles.subnav__dark : styles.subnav__light}`)}>
-      <li onClick={()=> setType('movie')}>Movies</li> 
-      <li onClick={()=> setType('tv')}>Tv Shows</li>
+      <li onClick={() => handleNav( 'movie','Movies')} className={classNames(`${active === 'Movies' ? styles.active : ''}`)}>Movies</li> 
+      <li  onClick={() => handleNav( 'tv','Tv Shows')} className={classNames(`${active === 'Tv Shows' ? styles.active : ''}`)}>Tv Shows</li>
     </ul>
   </div> 
     
