@@ -27,7 +27,7 @@ const Results = ({selected, type}) => {
       <div className='container'>
         <div className={styles.results__body}>
           <FlipMove>
-            {elements.map(element => (
+            {elements.filter(element => element.backdrop_path || element.poster_path).map(element => (
               <Card key={element.id} element={element} type={type}/>
             ))}
           </FlipMove>

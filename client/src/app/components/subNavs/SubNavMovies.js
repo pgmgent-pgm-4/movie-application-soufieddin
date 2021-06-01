@@ -8,7 +8,7 @@ import styles from './SubNav.module.scss';
 
 const SubNavMovies = ({setSelected, setType}) => {
   const {theme} = useContext(ThemeContext);
-  const [active, setActive] = useState('Popular Movies');
+  const [active, setActive] = useState('Popular');
 
   
   const handleNav = (request,type,e) =>{
@@ -21,9 +21,21 @@ const SubNavMovies = ({setSelected, setType}) => {
   return (
     <div className = 'container'>
       <ul  className={classNames(styles.subnav, `${theme === 'dark' ? styles.subnav__dark : styles.subnav__light}`)}>
-        <li className={classNames(`${active === 'Popular Movies' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_popular_movies, 'movie','Popular Movies')}>Popular Movies</li> 
-        <li className={classNames(`${active === 'Upcoming Movies' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_upComming_movies, 'movie','Upcoming Movies')}>Upcoming Movies</li>
-        <li className={classNames(`${active === 'Top Rated Movies' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_bestRated_movies, 'movie','Top Rated Movies')}>Top Rated Movies</li> 
+        <li className={classNames(`${active === 'Popular' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_popular_movies, 'movie','Popular')}>Popular</li> 
+        <li className={classNames(`${active === 'Upcoming' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_upComming_movies, 'movie','Upcoming')}>Upcoming</li>
+        <li className={classNames(`${active === 'Top Rated' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_bestRated_movies, 'movie','Top Rated')}>Top Rated</li> 
+        <li className={classNames(`${active === 'Action' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_action_movies, 'movie','Action')}>Action</li> 
+        <li className={classNames(`${active === 'Animation' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_animation_movies, 'movie','Animation')}>Animation</li>  
+        <li className={classNames(`${active === 'Comedy' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_comedy_movies, 'movie','Comedy')}>Comedy</li>
+        <li className={classNames(`${active === 'Crime' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_crime_movies, 'movie','Crime')}>Crime</li>  
+        <li className={classNames(`${active === 'Drama' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_drama_movies, 'movie','Drama')}>Drama</li>
+        <li className={classNames(`${active === 'Family' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_family_movies, 'movie','Family')}>Family</li>
+        <li className={classNames(`${active === 'Fantasy' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_fantasy_movies, 'movie','Fantasy')}>Fantasy</li>
+        <li className={classNames(`${active === 'Horror' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_horror_movies, 'movie','Horror')}>Horror</li>
+        <li className={classNames(`${active === 'Mystery' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_mystery_movies, 'movie','Mystery')}>Mystery</li>
+        <li className={classNames(`${active === 'Thriller' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_thriller_movies, 'movie','Thriller')}>Thriller</li>
+        <li className={classNames(`${active === 'War' ? styles.active : ''}`)} onClick={() => handleNav(requests.fetch_war_movies, 'movie','War')}>War</li>  
+
       </ul>
     </div>
 
