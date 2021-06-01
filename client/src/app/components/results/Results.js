@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import FlipMove from 'react-flip-move';
@@ -6,6 +8,7 @@ import styles from './Results.module.scss';
 // import requests from '../api/requests';
 
 const Results = ({selected, type}) => {
+
   const [elements, setElements] = useState([]);
 
 

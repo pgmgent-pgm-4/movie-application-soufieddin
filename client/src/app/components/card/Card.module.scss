@@ -8,6 +8,7 @@
   align-items: flex-start;
   cursor: pointer;
   text-decoration: none;
+  
   &__dark{
     color:#fff;
   }
@@ -24,11 +25,16 @@
     margin: .5rem 0;
     font-size: 1.25rem;
   }
+
   img{
     object-fit: cover;
     width: 100%;
     margin-bottom: .5rem;
+    border-radius:.5rem;
   }
+
+
+  
   &__info{
     display: flex;
     flex-direction: column;

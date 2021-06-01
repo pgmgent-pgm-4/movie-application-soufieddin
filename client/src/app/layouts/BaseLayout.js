@@ -1,9 +1,9 @@
 import { Footer, Header } from "../components/layout"
 
-const BaseLayout = ({children}) => {
+const BaseLayout = ({children, type}) => {
   return (
     <>
-      <Header />
+      <Header type={type} />
       <main>
         { children } 
       </main>

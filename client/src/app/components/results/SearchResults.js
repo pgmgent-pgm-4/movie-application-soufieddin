@@ -5,15 +5,18 @@ import Card from '../card/Card';
 import styles from './Results.module.scss';
 import useQuery  from '../../hooks/query';
 
-const SearchResults = () => {
+
+
+const SearchResults = ({type}) => {
   const [elements, setElements] = useState([]);
   const params = useQuery();
   const query = params.get('query');
   const keyword = params.get('keyword');
   const t = params.get('type');
+  const personId = params.get('personId');
   console.log(params)
-
-    let url = (`${query ? `https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false` : `https://api.themoviedb.org/3/discover/${t}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_keywords=${keyword}&with_watch_monetization_types=flatrate`}`);
+  console.log(type)
+    let url = (`${query ? `https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false` : `https://api.themoviedb.org/3/discover/${t}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_keywords=${keyword ? keyword : ''}&with_cast=${personId ? personId : ''}&with_watch_monetization_types=flatrate`}`);
 
   useEffect(() => {
 
@@ -33,9 +36,14 @@ const SearchResults = () => {
         <div className='container'>
           <div className={styles.results__body}>
           <FlipMove>
-            {elements.filter(element => element.backdrop_path || element.poster_path).map(element => (
-            <Card key={element.id} element={element} t={t}/>
-            ))}
+            {
+              query ? elements.filter(element => element.backdrop_path || element.poster_path).filter(element => element.media_type === type).map(element => (
+                <Card key={element.id} element={element} t={t}/>
+                ))  : elements.filter(element => element.backdrop_path || element.poster_path).map(element => (
+                  <Card key={element.id} element={element} t={t}/>
+                  ))
+            }
+            
          </FlipMove>
           </div>
         </div>

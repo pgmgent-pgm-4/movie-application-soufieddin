@@ -11,8 +11,8 @@ const Card = forwardRef(({element, type, t}, ref) => {
   const {theme} = useContext(ThemeContext);
 
   return (
-      <a href={`/details?type=${element.media_type || type || t}&id=${element.id}`} ref={ref} className={classNames(styles.card, `${theme === 'dark' ? styles.card__dark : styles.card__light}`)} id = {element.id} > 
-        <img src={`${base_img_url}${element.backdrop_path || element.poster_path}`} alt='movie poster' />
+      <a href={`/details?type=${element.media_type  || type || t}&id=${element.id}`} ref={ref} className={classNames(styles.card, `${theme === 'dark' ? styles.card__dark : styles.card__light}`)} id = {element.id} > 
+          <img src={`${base_img_url}${element.backdrop_path || element.poster_path}`} alt='movie poster' />
         <div className={styles.card__info}>
           <LinesEllipsis
             text={element.overview}
@@ -27,6 +27,7 @@ const Card = forwardRef(({element, type, t}, ref) => {
             <p>{element.release_date || element.first_air_date}</p>
           </div>
         </div>
+        
       </a>
   )
 });
