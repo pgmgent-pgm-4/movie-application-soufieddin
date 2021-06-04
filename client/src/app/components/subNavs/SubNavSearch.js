@@ -18,8 +18,8 @@ const SubNavSearch = ({setType}) => {
   return (
      <div className = 'container'>
     <ul className={classNames(styles.subnav, `${theme === 'dark' ? styles.subnav__dark : styles.subnav__light}`)}>
-      <li onClick={() => handleNav( 'movie','Movies')} className={classNames(`${active === 'Movies' ? styles.active : ''}`)}>Movies</li> 
-      <li  onClick={() => handleNav( 'tv','Tv Shows')} className={classNames(`${active === 'Tv Shows' ? styles.active : ''}`)}>Tv Shows</li>
+      <li onClick={() => handleNav( 'movie','Movies')} className={classNames(styles.subnav__item ,`${active === 'Movies' ? styles.activeTop : ''}`)}>Movies</li> 
+      <li  onClick={() => handleNav( 'tv','Tv Shows')} className={classNames(styles.subnav__item ,`${active === 'Tv Shows' ? styles.activeTop : ''}`)}>Tv Shows</li>
     </ul>
   </div> 
     

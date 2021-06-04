@@ -19,7 +19,6 @@ const Card = forwardRef(({element, type, t}, ref) => {
             maxLine='1'
             ellipsis='...'
             trimRight
-            
           />
           <strong>{element.title || element.original_name || element.name}</strong>
           <div className={styles.card__info__extra}>

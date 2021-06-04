@@ -9,32 +9,74 @@
   }
   li{
     cursor:pointer;
-    margin-right: 1.75rem;
+    margin-right: 1rem;
     white-space: nowrap;
   }
-  li:hover{
-    text-decoration:underline;
+  &__item{
+    &:hover{
+      color: #fff;
+      border: 1px solid red;
+      border-radius: .5rem;
+      padding: .5rem;
+      background-color: red;
+      }
   }
+
   &__dark{
     li{
       color: #fff;
+      border: 1px solid #fff;
+      border-radius: .5rem;
+      padding: .5rem;
+      background-color: transparent;
+      &.active{
+      color: #441D4F;
+      border: 1px solid #fff;
+      border-radius: .5rem;
+      padding: .5rem;
+      background-color: #fff;
+      }
+      &.activeTop{
+        color: #fff;
+        border: 1px solid red;
+        border-radius: .5rem;
+        padding: .5rem;
+        background-color: red;
+         
+        }
       
     }
   }
   &__light{
     li{
       color: #441D4F;
+      border: 1px solid #441D4F;
+      border-radius: .5rem;
+      padding: .5rem;
+      background-color: transparent;
+      &.active{
+        color: #fff !important;
+        border: 1px solid #441D4F !important;
+        border-radius: .5rem;
+        padding: .5rem;
+        background-color: #441D4F !important;
+      }
+      &.activeTop{
+        color: #fff;
+        border: 1px solid red;
+        border-radius: .5rem;
+        padding: .5rem;
+        background-color: red;
+         
+        }
     }
   }
   @media(max-width:991px){
     align-items: start;
     li{
-      padding: 0;
-      margin: 0 1.5rem;
+
+      margin: 0 .25rem;
     }
   }
 }
-.active{
-  text-decoration: underline;
-  font-weight: 700;
-}
+

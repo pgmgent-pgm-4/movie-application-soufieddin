@@ -9,7 +9,9 @@ const ThemeToggler = () => {
 
     const handleThemeToggle = (e) => {
       e.preventDefault();
-      setTheme(theme === 'light'? 'dark' : 'light');
+      const newTheme = theme === 'light'? 'dark' : 'light' ;
+      setTheme(newTheme);
+      window.localStorage.setItem('theme',newTheme);
     }
 
     return(

@@ -19,7 +19,7 @@ import { DetailElement, SearchResults } from "./components";
 
 const App = () => {
   
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(window.localStorage.getItem('theme'));
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
       <div className={classNames(styles.app, `${theme === 'dark' ? styles.app__dark : styles.app__light}`)}>
@@ -29,6 +29,9 @@ const App = () => {
               <Account />
             </Route>
             <Route  path = {Routes.SEARCH}>
+              <Search component={SearchResults}/>
+            </Route>
+            <Route  path = {Routes.Filter}>
               <Search component={SearchResults}/>
             </Route>
             <Route  path = {Routes.MEDIA}>

@@ -7,6 +7,14 @@
       flex-wrap: wrap;
       justify-content: space-between;
     }
+    p{
+      text-transform: capitalize;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      span{
+        text-transform: none;
+      }
+    }
     &__wrapper{
       margin-top: 2rem !important;
       margin-bottom: 3rem !important;
