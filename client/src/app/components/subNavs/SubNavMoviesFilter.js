@@ -25,7 +25,7 @@ const SubNavMoviesFilter = ({setType, setGenre}) => {
   return (
     <div className = 'container'>
       <ul  className={classNames(styles.subnav, `${theme === 'dark' ? styles.subnav__dark : styles.subnav__light}`)}> 
-      <li  className={classNames(styles.subnav__subItem ,`${active === 'All' ? styles.active : ''}`)} onClick={() => handleNav(0, 'movie','All')}>All</li>
+      <li  className={classNames(styles.subnav__subItem ,`${active === 'All' ? styles.active : ''}`)} onClick={() => handleNav(+0, 'movie','All')}>All</li>
 
         {isGenresLoading || !filterGenres ? <div>Loading...</div> : resultGenres.map(element => (
           <li key = {element.id} className={classNames(styles.subnav__subItem ,`${active === `${element.name}` ? styles.active : ''}`)} onClick={() => handleNav(parseInt(`${element.id}`), 'movie',`${element.name}`)}>{element.name}</li>

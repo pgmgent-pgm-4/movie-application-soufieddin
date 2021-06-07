@@ -25,10 +25,10 @@ const SubNavShowsFilter = ({setType, setGenre}) => {
   return (
     <div className = 'container'>
       <ul  className={classNames(styles.subnav, `${theme === 'dark' ? styles.subnav__dark : styles.subnav__light}`)}> 
-      <li  className={classNames(styles.subnav__subItem ,`${active === 'All' ? styles.active : ''}`)} onClick={() => handleNav('0', 'tv','All')}>All</li>
+      <li  className={classNames(styles.subnav__subItem ,`${active === 'All' ? styles.active : ''}`)} onClick={() => handleNav(+0, 'tv','All')}>All</li>
 
         {isGenresLoading || !filterGenres ? <div>Loading...</div> : resultGenres.map(element => (
-          <li key = {element.id} className={classNames(styles.subnav__subItem ,`${active === `${element.name}` ? styles.active : ''}`)} onClick={() => handleNav(`${element.id}`, 'tv',`${element.name}`)}>{element.name}</li>
+          <li key = {element.id} className={classNames(styles.subnav__subItem ,`${active === `${element.name}` ? styles.active : ''}`)} onClick={() => handleNav(parseInt(`${element.id}`), 'tv',`${element.name}`)}>{element.name}</li>
         ))}
       </ul>
     </div>

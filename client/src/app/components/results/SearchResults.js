@@ -29,11 +29,11 @@ const SearchResults = ({type, genre, scoreH, scoreL}) => {
             {p ? <p><span>{keyword? 'Keywoord: ' : 'Actuer:'}</span>&nbsp;{p}</p> : ''}
           <FlipMove>
             {isSearchelementsLoading || !resultsSearch ? <div>Loading...</div> : 
-            (query ? resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.media_type === type).filter(element => element.vote_average > scoreL && element.vote_average < scoreH).map(element => (
-              <Card key={element.id} element={element} t={t}/>
-              )) : resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.vote_average > scoreL && element.vote_average < scoreH).map(element => (
-                <Card key={element.id} element={element} t={t}/>
-              )))
+              (!query ? resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.vote_average >= scoreL && element.vote_average <= scoreH)
+            .map(element => (
+              <Card key={element.id} element={element} type={type} t={t}/>)) : (genre === 0 ? resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element =>( element.media_type === type || element.media_type === t )).filter(element => element.vote_average >= scoreL && element.vote_average <= scoreH).map(element => (<Card key={element.id} element={element} t={t}/>)) : resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.vote_average >= scoreL && element.vote_average <= scoreH).filter(element => element.media_type === type || element.media_type === t).filter((element => element.genre_ids.includes(genre))).map(element => (
+                <Card key={element.id} element={element} type={type} t={t}/>
+              ))))
             }
           </FlipMove>
           </div>
@@ -43,10 +43,12 @@ const SearchResults = ({type, genre, scoreH, scoreL}) => {
   )
 }
 
-// (!query ? resultsSearch.filter(element => element.backdrop_path || element.poster_path)
-//             .map(element => (
-//               <Card key={element.id} element={element} type={type} t={t}/>)) : (genre === 0 ? resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element =>( element.media_type === type || element.media_type === t )).map(element => (<Card key={element.id} element={element} t={t}/>)) : resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.media_type === type || element.media_type === t).filter((element => element.genre_ids.includes(genre))).map(element => (
-//                 <Card key={element.id} element={element} type={type} t={t}/>
-//               ))))
+// (query ? resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.media_type === type).filter(element => element.vote_average > scoreL && element.vote_average < scoreH).map(element => (
+//   <Card key={element.id} element={element} t={t}/>
+//   )) : resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.vote_average > scoreL && element.vote_average < scoreH).map(element => (
+//     <Card key={element.id} element={element} t={t}/>
+//   )))
+
+
 
 export default SearchResults;

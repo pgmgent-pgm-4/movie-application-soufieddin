@@ -14,10 +14,11 @@ const Search = () => {
   const keyword = params.get('keyword');
   const personId = params.get('personId');
   const [type, setType] = useState('movie');
-  const [genre, setGenre] = useState(28);
+  const [genre, setGenre] = useState(0);
   const [scoreH, setScoreHigh] = useState(10);
   const [scoreL, setScoreLow] = useState(0);
   console.log(scoreH, scoreL)
+  console.log(genre, typeof(genre))
   
  
   return (
