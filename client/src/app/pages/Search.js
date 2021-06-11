@@ -17,10 +17,7 @@ const Search = () => {
   const [genre, setGenre] = useState(0);
   const [scoreH, setScoreHigh] = useState(10);
   const [scoreL, setScoreLow] = useState(0);
-  console.log(scoreH, scoreL)
-  console.log(genre, typeof(genre))
-  
- 
+   
   return (
     <BaseLayout>
       {text ? <SubNavSearch setType={setType} /> : ''}
