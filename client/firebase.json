@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "movielix",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

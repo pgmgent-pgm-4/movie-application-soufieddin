@@ -1,0 +1,10 @@
+.footer{
+  text-align: center;
+  width:100%;
+  &__dark{
+    border-top: .5px solid #fff;
+  }
+  &__light{
+    border-top: .5px solid #441D4F;
+  }
+}

@@ -1,0 +1,11 @@
+.header{
+  width:100%;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  &__dark{
+    border-bottom: .5px solid #fff;
+  }
+  &__light{
+    border-bottom: .5px solid #441D4F;
+  }
+}

@@ -1,0 +1,25 @@
+/* [data-btn="light"]{
+  color: #fff;
+  background-color: #000;
+}
+
+[data-btn="dark"]{
+  color: #000;
+  background-color: #fff;
+}
+
+.themetoggler{
+  padding: .5rem;
+  border:none;
+  outline: none;
+}
+ */
+
+ .themetoggler{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  span{
+    font-size: 1.5rem;
+  }
+}
