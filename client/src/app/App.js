@@ -1,3 +1,5 @@
+import { AuthProvider, FirebaseProvider } from './contexts/firebase';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,9 +11,13 @@ import React,{useState} from 'react';
 import classNames from 'classnames';
 import * as Routes from './routes';
 import { ThemeContext } from "./libs/context";
-import { Account, Details, HomePage, Media, Search } from "./pages";
+import { Account, Details, HomePage, Media, Search, SignInPage } from "./pages";
+
 import styles from './App.module.scss';
 import { DetailElement, SearchResults } from "./components";
+import { PrivateRoute } from './utilities';
+import { appConfig } from './config';
+
 
 
 
@@ -23,29 +29,25 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
       <div className={classNames(styles.app, `${theme === 'dark' ? styles.app__dark : styles.app__light}`)}>
-        <Router>
+      
+    <FirebaseProvider>
+      <AuthProvider>
+        <Router basename={appConfig.basicURL}>
           <Switch>
-          <Route exact path = {Routes.Account}>
-              <Account />
-            </Route>
-            <Route  path = {Routes.SEARCH}>
-              <Search component={SearchResults}/>
-            </Route>
-            <Route  path = {Routes.Filter}>
-              <Search component={SearchResults}/>
-            </Route>
-            <Route  path = {Routes.MEDIA}>
-              <Media />
-            </Route>
-            <Route  path = {Routes.Details}>
-              <Details component={DetailElement}/>
-            </Route>
-            <Redirect from={Routes.HOME} to={Routes.LANDING}/>
-            <Route  path = {Routes.LANDING}>
-              <HomePage />
-            </Route>
+            <Route path={Routes.AUTH_SIGN_IN} component={SignInPage}/>
+              <PrivateRoute exact path = {Routes.Account} component={Account}/>
+              <PrivateRoute  path = {Routes.SEARCH} component={Search }/>
+              <PrivateRoute  path = {Routes.Filter}component={Search}/>
+              <PrivateRoute  path = {Routes.MEDIA} component={Media}/>
+              <PrivateRoute path = {Routes.Details} component={Details}/>
+              <Redirect from={Routes.HOME} to={Routes.LANDING}/>
+              <PrivateRoute path = {Routes.LANDING} component={HomePage}/>
           </Switch>
         </Router>
+      </AuthProvider>
+    </FirebaseProvider>
+        
+        
       </div>
     </ThemeContext.Provider>
   );

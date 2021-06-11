@@ -131,3 +131,4 @@ yarn-error.log*
 # Firebase stuff
 .env
 key.json
+consts.js

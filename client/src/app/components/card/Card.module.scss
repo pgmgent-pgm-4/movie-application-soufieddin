@@ -38,10 +38,35 @@
   &__info{
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    div{
+      font-size: 1.2rem;
+    }
     &__extra{
+      width:100%;
       display:flex;
       justify-content: space-between;
       align-items: baseline;
+      margin-bottom: 2rem;
+      p{
+        font-size: 1.2rem !important;
+      }
+    }
+    @media (max-width: 767px){
+      &__extra{
+        p{
+          font-size: .8rem !important;
+        }
+        
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+      &__extra{
+        p{
+          font-size: 1.1rem !important;
+        }
+      }
     }
   }
   @media(max-width: 1024px){

@@ -74,6 +74,17 @@
       align-items: center;
       li{
         margin-right: 2rem;
+        
+      }
+      &__log{
+        &__logBtn{
+          color: #fff;
+          border: none;
+          border-radius: 1rem;
+          padding: 4.5px  12px;
+          background-color: red;
+          cursor: pointer;
+        }
       }
       &__search{
         input{
@@ -146,13 +157,13 @@
           }
           @media (min-width:414px) and (max-width: 767px){
             input{
-              width:8rem;
+              width:7rem;
               height:3rem;
             }
           }
           @media (max-width: 413px){
             input{
-              width:6rem;
+              width:5.5rem;
               height:3rem;
             }
           }

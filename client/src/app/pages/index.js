@@ -3,6 +3,8 @@ import Details from './Details';
 import HomePage from './HomePage';
 import Media from './Media';
 import Search from './Search';
+import SignInPage from './SignInPage';
+
 
 
 export {
@@ -11,4 +13,6 @@ export {
   HomePage,
   Media,
   Search,
+  SignInPage,
+  
 }

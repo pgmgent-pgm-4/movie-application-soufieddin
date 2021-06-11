@@ -23,7 +23,7 @@ const Card = forwardRef(({element, type, t}, ref) => {
           <strong>{element.title || element.original_name || element.name}</strong>
           <div className={styles.card__info__extra}>
             <p>{element.vote_average}/10 | ({element.vote_count} Votes) </p>
-            <p>{element.release_date || element.first_air_date}</p>
+            <p className={styles.card__info__extra__dates}>{element.release_date || element.first_air_date}</p>
           </div>
         </div>
         
