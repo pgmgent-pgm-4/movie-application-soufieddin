@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import {useContext} from "react";
 import classNames from "classnames";
 import { ThemeContext } from "../../libs/context";
-import useQuery from '../../hooks/query';
+
 import styles from './DetailElement.module.scss';
 import { useFetch } from '../../hooks';
 import { useParams } from 'react-router';
@@ -12,11 +12,10 @@ const base_img_url = 'https://image.tmdb.org/t/p/original/';
 
 const DetailElement = () => {
   const {theme} = useContext(ThemeContext);
-  const params = useQuery();
-  const p = useParams();
+
+
   const id = useParams().id;
   const type = useParams().type;
-  const keyword = useParams().keyword;
   console.log(id)
   const [check, setCheck] = useState(false);
 
