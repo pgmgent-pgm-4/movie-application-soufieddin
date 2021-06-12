@@ -37,8 +37,7 @@ const App = () => {
             <Route path={Routes.AUTH_SIGN_IN} component={SignInPage}/>
               <PrivateRoute exact path = {Routes.Account} component={Account}/>
               <PrivateRoute  path = {Routes.SEARCH} component={Search }/>
-              <PrivateRoute  path = {Routes.FilterWord} component={Search}/>
-              <PrivateRoute  path = {Routes.FilterActuer} component={Search}/>
+              <PrivateRoute  path = {Routes.Filter} component={Search}/>
               <PrivateRoute  exact path = {Routes.MEDIA} component={Media}/>
               <PrivateRoute  path = {Routes.Details} component={Details}/>
               

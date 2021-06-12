@@ -2,7 +2,7 @@ import {useParams} from 'react-router-dom';
 import FlipMove from 'react-flip-move';
 import Card from '../card/Card';
 import styles from './Results.module.scss';
-//import useQuery  from '../../hooks/query';
+import useQuery  from '../../hooks/query';
 import { useFetch } from '../../hooks';
 
 
@@ -12,12 +12,11 @@ const SearchResults = ({type, genre, scoreH, scoreL}) => {
   const p = useParams().target;
 
 
-  // const params = useQuery();
-  const query = useParams().query;
-  const keyword = useParams().keyword;
-  const personId = useParams().actuer;
-  const t =  useParams().type;
-  // const personId = params.get('personId');
+  const params = useQuery();
+  const query = params.get('query');
+  const keyword = params.get('keyword');
+  const t = params.get('type');
+  const personId = params.get('personId');
 
     let url = (`${query ? `https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false` : `https://api.themoviedb.org/3/discover/${t}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_keywords=${keyword ? keyword : ''}&with_cast=${personId ? personId : ''}&with_watch_monetization_types=flatrate`}`);
     const [searchElements, isSearchelementsLoading] = useFetch(url);
@@ -43,5 +42,9 @@ const SearchResults = ({type, genre, scoreH, scoreL}) => {
     </div>
   )
 }
+
+
+
+
 
 export default SearchResults;

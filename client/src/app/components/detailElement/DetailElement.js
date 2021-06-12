@@ -3,26 +3,22 @@ import React, { useState } from 'react'
 import {useContext} from "react";
 import classNames from "classnames";
 import { ThemeContext } from "../../libs/context";
-
+import useQuery from '../../hooks/query';
 import styles from './DetailElement.module.scss';
 import { useFetch } from '../../hooks';
-import { useParams } from 'react-router';
 
 const base_img_url = 'https://image.tmdb.org/t/p/original/';
 
 const DetailElement = () => {
   const {theme} = useContext(ThemeContext);
-
-
-  const id = useParams().id;
-  const type = useParams().type;
-  console.log(id)
+  const params = useQuery();
+ 
   const [check, setCheck] = useState(false);
 
  
-  let url = (`https://api.themoviedb.org/3/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=videos`);
-  let urlKeys = (`https://api.themoviedb.org/3/${type}/${id}/keywords?api_key=${process.env.REACT_APP_API_KEY}`);
-  let urlCast = (`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US}`);
+  let url = (`https://api.themoviedb.org/3/${params.get('type')}/${params.get('id')}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=videos`);
+  let urlKeys = (`https://api.themoviedb.org/3/${params.get('type')}/${params.get('id')}/keywords?api_key=${process.env.REACT_APP_API_KEY}`);
+  let urlCast = (`https://api.themoviedb.org/3/${params.get('type')}/${params.get('id')}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US}`);
   
   const [element, isElementLoading] = useFetch(url);
   
@@ -57,8 +53,8 @@ const DetailElement = () => {
       </div>
       }
         <p className={styles.detail__keys}>{words ? 'Keywords:' : ''}</p>
-        <ul className={classNames(styles.detail__keywords, `${theme === 'dark' ? styles.detail__keywords__dark : styles.detail__keywords__light}`)}>{isWordsLoading || !resultsWords ? <div>Loading...</div> : resultsWords.map(k => (<li key={k.id}><a href={`/filterWord/${k.name}/${type}/${k.id}`} id={k.id}>{k.name}</a></li>))}</ul>
-        <ul className={classNames(styles.detail__cast, `${theme === 'dark' ? styles.detail__cast__dark : styles.detail__cast__light}`)}>{isCastLoading || !resultsCast ? <div>Loading...</div> : resultsCast.filter(c => c.profile_path).map(c => (<li key={c.id}><a href={`/filterActuer/${c.name}/${type}/${c.id}`}><img src={`${base_img_url}${c.profile_path}`} alt="" /><span>{c.name}</span></a></li>))}</ul>
+        <ul className={classNames(styles.detail__keywords, `${theme === 'dark' ? styles.detail__keywords__dark : styles.detail__keywords__light}`)}>{isWordsLoading || !resultsWords ? <div>Loading...</div> : resultsWords.map(k => (<li key={k.id}><a href={`/filter/${k.name}?type=movie&keyword=${k.id}`} id={k.id}>{k.name}</a></li>))}</ul>
+        <ul className={classNames(styles.detail__cast, `${theme === 'dark' ? styles.detail__cast__dark : styles.detail__cast__light}`)}>{isCastLoading || !resultsCast ? <div>Loading...</div> : resultsCast.filter(c => c.profile_path).map(c => (<li key={c.id}><a href={`/filter/${c.name}?type=movie&personId=${c.id}`}><img src={`${base_img_url}${c.profile_path}`} alt="" /><span>{c.name}</span></a></li>))}</ul>
     </div>
     </div>
   )
