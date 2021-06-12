@@ -4,6 +4,7 @@ import { ThemeContext } from "../../../libs/context";
 import MainNav from "../mainNav/MainNav";
 import styles from "./Header.module.scss";
 
+//header 
 const Header = ({type}) => {
   const {theme} = useContext(ThemeContext);
   return (
