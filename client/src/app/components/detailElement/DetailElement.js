@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {Link} from "react-router-dom";
 import {useContext} from "react";
 import classNames from "classnames";
 import { ThemeContext } from "../../libs/context";
@@ -53,8 +53,8 @@ const DetailElement = () => {
       </div>
       }
         <p className={styles.detail__keys}>{words ? 'Keywords:' : ''}</p>
-        <ul className={classNames(styles.detail__keywords, `${theme === 'dark' ? styles.detail__keywords__dark : styles.detail__keywords__light}`)}>{isWordsLoading || !resultsWords ? <div>Loading...</div> : resultsWords.map(k => (<li key={k.id}><a href={`/filter/${k.name}?type=movie&keyword=${k.id}`} id={k.id}>{k.name}</a></li>))}</ul>
-        <ul className={classNames(styles.detail__cast, `${theme === 'dark' ? styles.detail__cast__dark : styles.detail__cast__light}`)}>{isCastLoading || !resultsCast ? <div>Loading...</div> : resultsCast.filter(c => c.profile_path).map(c => (<li key={c.id}><a href={`/filter/${c.name}?type=movie&personId=${c.id}`}><img src={`${base_img_url}${c.profile_path}`} alt="" /><span>{c.name}</span></a></li>))}</ul>
+        <ul className={classNames(styles.detail__keywords, `${theme === 'dark' ? styles.detail__keywords__dark : styles.detail__keywords__light}`)}>{isWordsLoading || !resultsWords ? <div>Loading...</div> : resultsWords.map(k => (<li key={k.id}><Link to={`/filter/${k.name}?type=movie&keyword=${k.id}`} id={k.id}>{k.name}</Link></li>))}</ul>
+        <ul className={classNames(styles.detail__cast, `${theme === 'dark' ? styles.detail__cast__dark : styles.detail__cast__light}`)}>{isCastLoading || !resultsCast ? <div>Loading...</div> : resultsCast.filter(c => c.profile_path).map(c => (<li key={c.id}><Link to={`/filter/${c.name}?type=movie&personId=${c.id}`}><img src={`${base_img_url}${c.profile_path}`} alt="" /><span>{c.name}</span></Link></li>))}</ul>
     </div>
     </div>
   )
