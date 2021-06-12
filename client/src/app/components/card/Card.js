@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
 import {useContext} from "react";
 import classNames from "classnames";
+import {Link} from "react-router-dom"
 import { ThemeContext } from "../../libs/context";
 import styles from './Card.module.scss';
 
@@ -11,7 +12,7 @@ const Card = forwardRef(({element, type, t}, ref) => {
   const {theme} = useContext(ThemeContext);
 
   return (
-      <a href={`/details?type=${element.media_type  || type || t}&id=${element.id}`} ref={ref} className={classNames(styles.card, `${theme === 'dark' ? styles.card__dark : styles.card__light}`)} id = {element.id} > 
+      <Link to={`/details?type=${element.media_type  || type || t}&id=${element.id}`} ref={ref} className={classNames(styles.card, `${theme === 'dark' ? styles.card__dark : styles.card__light}`)} id = {element.id} > 
           <img src={`${base_img_url}${element.backdrop_path || element.poster_path}`} alt='movie poster' />
         <div className={styles.card__info}>
           <LinesEllipsis
@@ -27,7 +28,7 @@ const Card = forwardRef(({element, type, t}, ref) => {
           </div>
         </div>
         
-      </a>
+      </Link>
   )
 });
 
