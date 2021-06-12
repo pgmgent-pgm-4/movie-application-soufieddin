@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
 import {useContext} from "react";
 import classNames from "classnames";
+
 import {Link} from "react-router-dom";
 import { ThemeContext } from "../../libs/context";
 import styles from './Card.module.scss';

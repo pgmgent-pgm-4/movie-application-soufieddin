@@ -43,4 +43,8 @@ const SearchResults = ({type, genre, scoreH, scoreL}) => {
   )
 }
 
+
+
+
+
 export default SearchResults;

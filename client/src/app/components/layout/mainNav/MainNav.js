@@ -47,7 +47,7 @@ const MainNav = () => {
         </li> */}
         <li className={classNames(styles.nav__list__other__search, `${theme === 'dark' ? styles.nav__list__other__search__dark : styles.nav__list__other__search__light}`)}>
           <input type='text' value={`${query}`} placeholder='Search... ' onChange={handleInput}/>
-          <NavLink   to={`/search?query=${query}`} activeClassName="active"><button disabled={!query}>Search</button></NavLink>
+          <NavLink   to={`/search/${query}`} activeClassName="active"><button disabled={!query}>Search</button></NavLink>
         </li>
         <ThemeToggler />
       </div>

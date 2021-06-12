@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {Link} from "react-router-dom";
 import {useContext} from "react";
 import classNames from "classnames";
 import {Link} from "react-router-dom";
@@ -13,6 +13,7 @@ const base_img_url = 'https://image.tmdb.org/t/p/original/';
 const DetailElement = () => {
   const {theme} = useContext(ThemeContext);
   const params = useQuery();
+ 
   const [check, setCheck] = useState(false);
 
  
