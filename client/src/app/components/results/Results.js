@@ -4,6 +4,7 @@ import Card from '../card/Card';
 import styles from './Results.module.scss';
 import { useFetch } from '../../hooks';
 
+//results for media page
 const Results = ({selected, type, scoreH, scoreL}) => {
   const [media, isMediaLoading] = useFetch(selected);
   const resultsMedia = media && media.results;
