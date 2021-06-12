@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import Media from './Media';
 import Search from './Search';
 import SignInPage from './SignInPage';
+import NotFoundPage from './NotFoundPage';
 
 
 
@@ -14,5 +15,6 @@ export {
   Media,
   Search,
   SignInPage,
+  NotFoundPage,
   
 }

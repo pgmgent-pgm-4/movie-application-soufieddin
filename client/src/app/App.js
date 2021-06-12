@@ -11,10 +11,9 @@ import React,{useState} from 'react';
 import classNames from 'classnames';
 import * as Routes from './routes';
 import { ThemeContext } from "./libs/context";
-import { Account, Details, HomePage, Media, Search, SignInPage } from "./pages";
+import { Account, Details, HomePage, Media, NotFoundPage, Search, SignInPage } from "./pages";
 
 import styles from './App.module.scss';
-import { DetailElement, SearchResults } from "./components";
 import { PrivateRoute } from './utilities';
 import { appConfig } from './config';
 
@@ -34,14 +33,18 @@ const App = () => {
       <AuthProvider>
         <Router basename={appConfig.basicURL}>
           <Switch>
+            
             <Route path={Routes.AUTH_SIGN_IN} component={SignInPage}/>
               <PrivateRoute exact path = {Routes.Account} component={Account}/>
-              <PrivateRoute  path = {Routes.SEARCH} component={Search }/>
-              <PrivateRoute  path = {Routes.Filter}component={Search}/>
-              <PrivateRoute  path = {Routes.MEDIA} component={Media}/>
-              <PrivateRoute path = {Routes.Details} component={Details}/>
+              <PrivateRoute  exact path = {Routes.SEARCH} component={Search }/>
+              <PrivateRoute  exact path = {Routes.Filter}component={Search}/>
+              <PrivateRoute  exact path = {Routes.MEDIA} component={Media}/>
+              <PrivateRoute exact path = {Routes.Details} component={Details}/>
+              
               <Redirect from={Routes.HOME} to={Routes.LANDING}/>
-              <PrivateRoute path = {Routes.LANDING} component={HomePage}/>
+              <PrivateRoute exact path = {Routes.LANDING} component={HomePage}/>
+              <Route  component={NotFoundPage}/>
+              
           </Switch>
         </Router>
       </AuthProvider>
