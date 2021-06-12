@@ -43,12 +43,4 @@ const SearchResults = ({type, genre, scoreH, scoreL}) => {
   )
 }
 
-// (query ? resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.media_type === type).filter(element => element.vote_average > scoreL && element.vote_average < scoreH).map(element => (
-//   <Card key={element.id} element={element} t={t}/>
-//   )) : resultsSearch.filter(element => element.backdrop_path || element.poster_path).filter(element => element.vote_average > scoreL && element.vote_average < scoreH).map(element => (
-//     <Card key={element.id} element={element} t={t}/>
-//   )))
-
-
-
 export default SearchResults;

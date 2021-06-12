@@ -81,7 +81,7 @@
           color: #fff;
           border: none;
           border-radius: 1rem;
-          padding: 4.5px  12px;
+          padding:.5rem .75rem;
           background-color: red;
           cursor: pointer;
         }
@@ -92,6 +92,9 @@
           height:2rem;
           background-color:transparent;
           padding: 0 .5rem;
+         border-top-left-radius: 1rem;
+         border-bottom-left-radius: 1rem;
+         outline: none;
         }
         button{
           height:2rem;
@@ -99,6 +102,8 @@
           border:none;
           outline: none;
           cursor: pointer;
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
         }
         &__dark{
           input{

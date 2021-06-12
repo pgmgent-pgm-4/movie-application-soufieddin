@@ -37,5 +37,3 @@ const points =  {
 }
 export default points;
 
-// "database_url": "https://movielix-react-default-rtdb.europe-west1.firebasedatabase.app/",
-//   "databaseUrl": "https://movielix-react.firbaseio.com"
