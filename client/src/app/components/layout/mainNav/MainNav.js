@@ -7,7 +7,6 @@ import ThemeToggler from "../../theme/themeToggler";
 import styles from "./MainNav.module.scss";
 import { useAuth } from '../../../contexts/firebase/auth.context';
 
-
 const MainNav = () => {
   const {currentUser, signOut} = useAuth();
 
@@ -34,8 +33,6 @@ const MainNav = () => {
         <li>
           <NavLink  to={Routes.MEDIA} activeClassName="active">Movies / Tv-Shows</NavLink>
         </li>
-        
-
       </div>
       <div className={styles.nav__list__other}>
       <li className={styles.nav__list__other__log}>

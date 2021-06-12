@@ -1,12 +1,8 @@
-
 import { useEffect, useState } from 'react';
-
-
 
 const useFetch = (api) => {
   const [res, setRes] = useState(null);
   const [isLoading,setIsLoading]= useState(true);
-  // const [error,setError]= useState(null);
 
   useEffect(() => {
     const getData = async () => {

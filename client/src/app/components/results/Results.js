@@ -3,7 +3,6 @@ import FlipMove from 'react-flip-move';
 import Card from '../card/Card';
 import styles from './Results.module.scss';
 import { useFetch } from '../../hooks';
-// import requests from '../api/requests';
 
 const Results = ({selected, type, scoreH, scoreL}) => {
   const [media, isMediaLoading] = useFetch(selected);
