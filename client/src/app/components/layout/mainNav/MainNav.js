@@ -38,7 +38,7 @@ const MainNav = () => {
       <li className={styles.nav__list__other__log}>
           {!!currentUser
           ? <button className={styles.nav__list__other__log__logBtn} onClick={signOut}>Logout</button>
-          : <NavLink to={Routes.AUTH_SIGN_IN} activeClassName="active">Sign In</NavLink>
+          : <NavLink to={Routes.AUTH_SIGN_IN} activeClassName="active">Login</NavLink>
           }    
         </li>
         {/* <li>
