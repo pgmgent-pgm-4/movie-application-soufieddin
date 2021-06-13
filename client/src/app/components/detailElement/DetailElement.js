@@ -41,7 +41,7 @@ const DetailElement = () => {
               <strong>{element.name || element.title || element.original_name || element.original_title}</strong>
               <span className={styles.detail__info__text__title__check}><label onClick={()=> setCheck(!check)} className={classNames(styles.detail__info__text__title__check__label, `${theme === 'dark' ? `${!check ? styles.detail__info__text__title__check__label__unchecked__dark : styles.detail__info__text__title__check__label__checked__dark}` : `${!check ? styles.detail__info__text__title__check__label__unchecked__light :styles.detail__info__text__title__check__label__checked__light}`}`)} >{!check ? 'Add to wishlist' : 'Remove from wishlist'}</label><input type="checkbox" checked={check}/></span>
             </div>
-            <div>Overview<a href={`https://www.youtube.com/watch?v=${element.videos.results[0].key}`}>Watch the trailer</a></div>
+            <div>Overview<a href={`https://www.youtube.com/watch?v=${element.videos.results[0].key}`} target="_blank" rel="noopener noreferrer">Watch the trailer</a></div>
             <p>{element.overview}</p>
             <ul className={classNames(styles.detail__info__text__list, `${theme === 'dark' ? styles.detail__info__text__list__dark : styles.detail__info__text__list__light}`)}>
               <li><strong>Budget</strong> <span>${element.budget}</span></li>
