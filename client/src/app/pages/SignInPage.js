@@ -48,12 +48,12 @@ const SignInPage = ({children}) => {
           <button type="submit" className="btn btn-primary">Sign In</button>
         </form>
         }
-        {/* {!!currentUser === true && 
+        {!!currentUser === true && 
           
             
             <button onClick={() => signOut()}>Sign out</button>
           
-        } */}
+        }
       </div>
 
     </div>
