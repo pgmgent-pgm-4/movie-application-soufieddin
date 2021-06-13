@@ -6,29 +6,20 @@ import { ThemeContext } from "../../libs/context";
 import useQuery from '../../hooks/query';
 import styles from './DetailElement.module.scss';
 import { useFetch } from '../../hooks';
-
 const base_img_url = 'https://image.tmdb.org/t/p/original/';
-
 const DetailElement = () => {
   const {theme} = useContext(ThemeContext);
   const params = useQuery();
- 
   const [check, setCheck] = useState(false);
-
- 
   let url = (`https://api.themoviedb.org/3/${params.get('type')}/${params.get('id')}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=videos`);
   let urlKeys = (`https://api.themoviedb.org/3/${params.get('type')}/${params.get('id')}/keywords?api_key=${process.env.REACT_APP_API_KEY}`);
   let urlCast = (`https://api.themoviedb.org/3/${params.get('type')}/${params.get('id')}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US}`);
-  
   const [element, isElementLoading] = useFetch(url);
-  
   const [words, isWordsLoading] = useFetch(urlKeys)
   const resultsWords = words && (words.keywords ? words.keywords : words.results);
   const [cast, isCastLoading] = useFetch(urlCast);
   const resultsCast = cast && cast.cast.sort((a, b) => (a.popularity < b.popularity) ? 1 : -1);
-
   return (
-    
     <div className='container'>
       <div className = {styles.detail}>
       {isElementLoading || !element ? <div>Loading...</div> : 
